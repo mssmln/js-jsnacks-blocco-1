@@ -24,7 +24,11 @@ var i = 0;
 while (i <= 4) { // from 0 to 4 total 5 times
   n = parseInt(prompt('key in an integer number') );
   sum += n;
-  i++;
+  i++; // in questa operazione non sommiamo alcuna i pertanto la sua posizione (sopra o sotto sum += non conta. Gli alert possono bloccare i cicli e mostrarti ciò che sta accadendo
+
+  // alert(sum);
+  // sum = n + i;
+  // alert(sum);
 }
 
 console.log(sum);

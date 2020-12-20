@@ -6,47 +6,20 @@
 // I declare an array containing guest names to attend the party
 var guest = ['Rossi', 'Bianchi', 'Verdi', 'Conte'];
 var name = prompt('key in your name');
-var message = true;
+name = name.charAt(0).toUpperCase() + name.slice(1);
+var message = false; // senza la var booleana il ciclo scorrerebbe ciascun index per risponderti, e.i. con Bianchi - i0 false i1 true i2 false i3 false. Così non funziona
+// ci aspettiamo un solo true, meglio inizializzare message a false
 
 for (var i = 0; i < guest.length; i++) {
-  if (name != guest[i]) {
-    message = false;
-
+  if (name == guest[i]) {
+    message = true;
   }
 }
 
 console.log(message);
 
-
-
-// var listaInvitati = ['Rossi', 'Verdi', 'Bianchi'];
-//
-// var nome = prompt('inserisci il nome');
-//
-// for (var i = 0; i < listaInvitati.length; i++) {
-//   if (nome == listaInvitati[i]) {
-//     console.log('puoi accedere alla festa');
-//   } //else {
-//   //   console.log('non puoi accedere');
-//   // }  vede index per index i 0 vero i 1 falso and so on
-// }
-//
-//
-// // correzione
-// // il prompt fuori dal ciclo
-// // i sta per la lista che cambia 0,1,2 and so on
-// // var messaggio = false; // consideriamo i nome come codici univoci e con inizializzato il false il programma lavora meno perch+ troveremo un solo true
-// //
-// // for (var i = 0; i < listaInvitati.length; i++) {
-// //   if (nome == listaInvitati[i]) {
-// //     messaggio = true;
-// //   }
-// // }
-// // console.log(messaggio);
-// //
-// //
-// // if (messaggio) {
-// //   console.log('you can');
-// // } else {
-// //   console.log('you cannot');
-// // }
+if (message == true) {
+  console.log('you can attend the party');
+} else {
+  console.log('you cannot attend the party');
+}
